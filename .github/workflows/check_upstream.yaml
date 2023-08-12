@@ -17,7 +17,7 @@ jobs:
     - name: Checkout main
       uses: actions/checkout@v2
       with:
-        ref: main
+        ref: dev
         # submodules: 'recursive'     ### may be needed in your situation
 
     # Step 2: run this sync action - specify the upstream repo, upstream branch to sync with, and target sync branch
@@ -39,7 +39,7 @@ jobs:
     # Step 4: Print a helpful timestamp for your records (not required, just nice)
     - name: Timestamp
       run: date
-      
+
   create_new_branch:
     needs: sync_with_upstream
     runs-on: ubuntu-latest
